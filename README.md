@@ -1,7 +1,7 @@
 # Credit Card Fraud Detection
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/credit-card-lock.jpg" width="800" height="600">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/credit-card-lock.jpg" width="800" height="600">
 </p>
 <i>Can we predict fraudulent credit card transactions using data that is collected in 2 days? What kind of special treatments we have to use to analyze extremely imbalanced data sets? The project mainly answers those two questions. XGBoost Classifier achieved 97% Precision and 79% Recall scores on test data.</i>
 
@@ -40,7 +40,7 @@ In the project, I had the opportunity to exercise the following machine learning
 
 ---
 
-[`my_module.py`](https://github.com/alirifat/fraud-detection/blob/master/Documentation/my_module.py) contains wrapping functions for `scikit-learn`, `imblearn`, `matplotlib`, `pandas` and `numpy` APIs. Functions that use `scikit-learn` API make easier to cross-validate, train and test several algorithm at once. It contains the following functions:
+[`my_module.py`](https://github.com/alirifat/fraud-detection/blob/main/Documentation/my_module.py) contains wrapping functions for `scikit-learn`, `imblearn`, `matplotlib`, `pandas` and `numpy` APIs. Functions that use `scikit-learn` API make easier to cross-validate, train and test several algorithm at once. It contains the following functions:
 
 * `pr_auc_score`: Calculates AUC (Area Under Curve) PR (Precision-Recall) score.
 * `scoring_functions`: Returns a list of evaluation metrics such as accuracy, precision, recall, etc.
@@ -55,8 +55,8 @@ In the project, I had the opportunity to exercise the following machine learning
 
 ---
 
-[See the module](https://github.com/alirifat/fraud-detection/blob/master/Documentation/my_module.py)  
-[See the full report](https://github.com/alirifat/fraud-detection/blob/master/Documentation/Fraud%20Detection%20Report%20PDF.pdf)  
+[See the module](https://github.com/alirifat/fraud-detection/blob/main/Documentation/my_module.py)  
+[See the full report](https://github.com/alirifat/fraud-detection/blob/main/Documentation/Fraud%20Detection%20Report%20PDF.pdf)  
 [Find me on LinkedIn](https://www.linkedin.com/in/alirifatkaya/)  
 [Go to Table of Contents](#Table-of-Contents)
 
@@ -64,7 +64,7 @@ In the project, I had the opportunity to exercise the following machine learning
 
 ## The Cost of Card Fraud
 
-<img align="right" width="225" height="300" src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/nilson-fraud-report.jpg">Card fraud can be defined as making purchases via credit cards, debit cards, etc., without being authorized. It is a daily life issue that causes many people to suffer and many resources to be lost. It can happen to anyone in our society since either credit cards or debit cards mostly do our transactions.
+<img align="right" width="225" height="300" src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/nilson-fraud-report.jpg">Card fraud can be defined as making purchases via credit cards, debit cards, etc., without being authorized. It is a daily life issue that causes many people to suffer and many resources to be lost. It can happen to anyone in our society since either credit cards or debit cards mostly do our transactions.
 
 The loss from card fraud will reach 40 Billion $ by 2027.  However, it is only the financial aspect of fraudulent transactions, which do not account for the time spent to resolve the issues and harm to society's well-being.
 
@@ -72,7 +72,7 @@ This project aims to detect fraudulent transactions so that it is possible to de
 
 ---
 
-[See the full report](https://github.com/alirifat/fraud-detection/blob/master/Documentation/Fraud%20Detection%20Report%20PDF.pdf)  
+[See the full report](https://github.com/alirifat/fraud-detection/blob/main/Documentation/Fraud%20Detection%20Report%20PDF.pdf)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -123,30 +123,30 @@ According to [Brownlee (2020)](https://machinelearningmastery.com/what-is-imbala
 The heatmap shows the correlation among features by color-coded cells. The features `v1`-`v28` are acquired through PCA so that they are orthogonal to each other. In other words, there is no correlation among those features.
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/correlation-matrix.JPG" width="800" height="600">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/correlation-matrix.JPG" width="800" height="600">
 </p>
 
 The correlation coefficients for `v7`-`amount` and `v20`-`amount` are the highest among all others. For this reason, it may be a good idea to have a closer look at those relationships. However, in the scatterplots, we see that the coefficients are inflated due to outliers. 
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/scatterplots.JPG" width="800" height="300">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/scatterplots.JPG" width="800" height="300">
 </p>
 
 Because univariate analysis didn't provide any useful results. We will move on to the bivariate analysis, in which we will look at the relationships between each input feature and the target feature. Further details can be seen in the [notebook](https://github.com/alirifat/fraud-detection/blob/master/01_exploratory_data_analysis.ipynb).
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/bivariate-analysis.JPG" width="800" height="300">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/bivariate-analysis.JPG" width="800" height="300">
 </p>
 
 Finally, we will compare the histograms for fraudulent transactions and genuine transactions. To consolidate transactions into one day, we created a new feature, `hour`, which indicates when the transaction took place. 
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/histograms.JPG" width="800" height="600">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/histograms.JPG" width="800" height="600">
 </p>
 
 ---
 
-[See the notebook](https://github.com/alirifat/fraud-detection/blob/master/01_exploratory_data_analysis.ipynb)  
+[See the notebook](https://github.com/alirifat/fraud-detection/blob/main/01_exploratory_data_analysis.ipynb)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -168,7 +168,7 @@ However, the evaluation metrics may not provide accurate results due to the data
 Dummy Classifier doesn't consider the input matrix while making predictions. For this reason, it can provide the necessary insight into the evaluation metrics. In this step, we compared Dummy Classifier with Logistic Regression.
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/dummy-logistic.JPG" width="600" height="500">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/dummy-logistic.JPG" width="600" height="500">
 </p>
 
 We see that **accuracy** and **specificity** are not useful metrics for extremely imbalanced data sets from the figure. Moreover, there is a considerable gap between **precision** and **recall**, which will affect the derivative metrics' performance, such as **f1-score**, **f2-score**, and **geometric mean**. For this reason, we will continue with __MCC__, __PR curve__, and **ROC curve**.
@@ -178,7 +178,7 @@ We see that **accuracy** and **specificity** are not useful metrics for extremel
 Cross-Validation lets us reduce the impact of *luck* in our studies by training and testing the models from scratch with different data parts and getting an interval for future results.
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/validation-scores.JPG" width="800" height="600">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/validation-scores.JPG" width="800" height="600">
 </p>
 
 While algorithms have closer **MCC** and AUC (Area Under Curve) **PR** scores, they have almost perfect AUC **ROC** scores. **Naïve Bayes** has one of the highest AUC **ROC** scores, but it is not consistent with other metrics. [Brownlee (2020)](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-imbalanced-classification/) states that **ROC** may report optimistic results under the condition of extreme class imbalance. In this study, we believe that AUC **ROC** scores reflect that optimism. For this reason, we will drop **ROC** from the study.
@@ -190,12 +190,12 @@ Finally, **Gradient Boosting** has the highest error, which means its scores var
 The results are calculated by taking the average of all algorithms' scores for each metric. The reasoning is that an increase in the data quality will be visible on the metrics so that __SMOTEENN__ will generate higher scores on average. However, we couldn't see such improvement. For this reason, we will use the original data set.
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/resampling.JPG" width="600" height="400">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/resampling.JPG" width="600" height="400">
 </p>
 
 ---
 
-[See the notebook](https://github.com/alirifat/fraud-detection/blob/master/02_algorithms_with_default_parameters.ipynb)  
+[See the notebook](https://github.com/alirifat/fraud-detection/blob/main/02_algorithms_with_default_parameters.ipynb)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -217,8 +217,8 @@ We used GridSearchCv. which goes over every possible combination of parameters i
 
 ---
 
-[See the notebook1](https://github.com/alirifat/fraud-detection/blob/master/03_hyperparameter_optimization.ipynb)  
-[See the notebook2](https://github.com/alirifat/fraud-detection/blob/master/03_knn_hyperparameter_optimization.ipynb)  
+[See the notebook1](https://github.com/alirifat/fraud-detection/blob/main/03_hyperparameter_optimization.ipynb)  
+[See the notebook2](https://github.com/alirifat/fraud-detection/blob/main/03_knn_hyperparameter_optimization.ipynb)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -228,18 +228,18 @@ We used GridSearchCv. which goes over every possible combination of parameters i
 We used a narrow set of hyperparameters and selected the best performing combinations for the final evaluation. We did the final evaluation using the hold-out test set. For this reason, these scores reflect the algorithms' performances on brand-new data. 
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/test-scores.JPG" width="800" height="600">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/test-scores.JPG" width="800" height="600">
 </p>
 
 We did our evaluation based on the evaluation metrics and the confusion matrix. We find that __XGBoost__ algorithm with tuned parameter is the best performing algorithm. We achieved 97% Precision and 79% Recall scores on test data.
 
 <p align="center">
-  <img src="https://github.com/alirifat/fraud-detection/blob/master/Documentation/figures/confusion-matrix.JPG" width="400" height="300">
+  <img src="https://github.com/alirifat/fraud-detection/blob/main/Documentation/figures/confusion-matrix.JPG" width="400" height="300">
 </p>
 
 ---
 
-[See the notebook](https://github.com/alirifat/fraud-detection/blob/master/04_final_evaluation.ipynb)  
+[See the notebook](https://github.com/alirifat/fraud-detection/blob/main/04_final_evaluation.ipynb)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
