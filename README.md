@@ -40,7 +40,7 @@ In the project, I had the opportunity to exercise the following machine learning
 
 ---
 
-[`my_module.py`](https://github.com/alirifat/fraud-detection/blob/main/Documentation/my_module.py) contains wrapping functions for `scikit-learn`, `imblearn`, `matplotlib`, `pandas` and `numpy` APIs. Functions that use `scikit-learn` API make easier to cross-validate, train and test several algorithm at once. It contains the following functions:
+[`my_module.py`](https://github.com/alirifat/fraud-detection/blob/main/Documentation/my_module.py) contains wrapping functions for `scikit-learn`, `imblearn`, `matplotlib`, `pandas` and `numpy` APIs. Functions that use `scikit-learn` API make easier to cross-validate, train and test several algorithm at once. The module contains the following functions:
 
 * `pr_auc_score`: Calculates AUC (Area Under Curve) PR (Precision-Recall) score.
 * `scoring_functions`: Returns a list of evaluation metrics such as accuracy, precision, recall, etc.
