@@ -145,7 +145,7 @@ Because univariate analysis didn't provide any useful results. We will move on t
 Finally, we will compare the histograms for fraudulent transactions and genuine transactions. To consolidate transactions into one day, we created a new feature, `hour`, which indicates when the transaction took place. 
 
 <p align="center">
-  <img src="https://github.com/alirkaya/card-fraud-detection/blob/main/Documentation/images/hour_histogram.jpg" width="800" height="600">
+  <img src="https://github.com/alirkaya/card-fraud-detection/blob/main/Documentation/images/hour_histogram.jpg" width="800" height="400">
 </p>
 
 
