@@ -106,7 +106,7 @@ def scoring_functions():
     return list_of_scoring_functions
 
 
-def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False], prints=True, sleep_time=None):
+def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False], verbose=True, sleep_time=None):
     """ Return Cross-Validation score for each fold by fitting the model from
     scratch.
 
@@ -159,7 +159,7 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
         >>> resample = [('SMOTE', smote)]
         >>> lr = LogisticRegresion()
         >>> estimators = [('Logistic Regression', lr)]
-        >>> do_cross_validation(X, y, estimators=estimators, cv, resample=resample, scaler=[True], prints=False)
+        >>> do_cross_validation(X, y, estimators=estimators, cv, resample=resample, scaler=[True], verbose=False)
 
 
     scalers: An array of boolean values, each value is for the corresponding
@@ -173,7 +173,7 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
         >>> models = [lr, rf]
         >>> scalers = [True, False]
         >>> cv_results = do_cross_validation(X, y, estimators=models,
-                                             cv, scalers=scalers, prints=False)
+                                             cv, scalers=scalers, verbose=False)
 
 
     print: if True, prints out information about each fold such as size of the
@@ -186,7 +186,7 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
         Example:
         >>> sleep_time=1800 # 30 mins
         >>> cv_results = do_cross_validation(X, y, estimators=models,
-                                             cv, scalers=scalers, prints=False,
+                                             cv, scalers=scalers, verbose=False,
                                              sleep_time=sleep_time)
 
 
@@ -207,7 +207,7 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
         }
 
 
-    Prints
+    Verbose
     ------
 
     For each fold of cross-validation, prints the followings:
@@ -247,13 +247,13 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
         X_validation_copy = X_validation.copy()
 
         if resample:
-            if prints:
+            if verbose:
                 print('Fold {}:'.format(i + 1))
 
             for name, method in resample:
                 X_train_copy_resample, y_train_copy_resample = method.fit_resample(
                     X_train_copy, y_train_copy)
-                if prints:
+                if verbose:
                     print('\n'+name)
                     print('-' * 81)
                     print('Number of transactions in the original training dataset:', X_train_copy.shape[0])
@@ -294,7 +294,7 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
                     fpr, tpr, threshold = roc_curve(y_validation, probas)
                     tn, fp, fn, tp = confusion_matrix(y_validation, preds).ravel()
 
-                    if prints:
+                    if verbose:
                         print('\n' + ml_name + ' with ' + name)
                         print('-' * 81)
                         print('Training data AUCPR score: {}'.format(
@@ -345,10 +345,10 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
                         print('sleeping... {} seconds'.format(sleep_time))
                         sleep(sleep_time)
 
-            if prints:
+            if verbose:
                 print()
         else:
-            if prints:
+            if verbose:
                 print('Fold {}:'.format(i + 1))
                 print('\nNumber of Observations in the Training Data: {}'
                       .format(X_train.shape[0]))
@@ -377,7 +377,7 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
                 fpr, tpr, threshold = roc_curve(y_validation, probas)
                 tn, fp, fn, tp = confusion_matrix(y_validation, preds).ravel()
 
-                if prints:
+                if verbose:
                     print('\n' + ml_name)
                     print(('-' * 81))
                     print(('Training data AUCPR score: {}'.format(
@@ -426,10 +426,10 @@ def do_cross_validation(X, y, estimators, cv=None, resample=None, scalers=[False
                 if sleep_time:
                     print('sleeping... {} seconds'.format(sleep_time))
                     sleep(sleep_time)
-        if prints:
+        if verbose:
             print()
         i += 1
-    if prints:
+    if verbose:
         print('=' * 81)
         print('=' * 81)
 
