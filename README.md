@@ -224,7 +224,7 @@ We used GridSearchCv. which goes over every possible combination of parameters i
 
 
 <p align="center">
-  <img src="https://github.com/alirkaya/card-fraud-detection/blob/main/Documentation/images/confusion_matrices.png" width="800" height="400">
+  <img src="https://github.com/alirkaya/card-fraud-detection/blob/main/Documentation/images/confusion_matrices.PNG" width="600" height="600">
 </p>
 
 
